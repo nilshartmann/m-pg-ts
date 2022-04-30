@@ -4,7 +4,8 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@nilshartmann/lib": "1.0.0"
+    "@nilshartmann/lib": "1.0.0",
+    "@nilshartmann/lib-cjs": "1.0.0"
   },
   "scripts": {
     "start": "node build/main.js",

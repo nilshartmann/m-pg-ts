@@ -6,6 +6,7 @@
   "workspaces": [
     "lib",
     "app",
-    "app-esm"
+    "app-esm",
+    "lib-cjs"
   ]
 }

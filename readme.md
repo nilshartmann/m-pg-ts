@@ -7,6 +7,7 @@ von ESM-Modulen in TypeScript zu zeigen.
 
 - Im Root-Verzeichnis `yarn install`
 - Im `lib`-Verzeichnis `yarn build` -> TS compiliert nach `dist` (ESM-Code!)
+- Im `lib-cjs`-Verzeichnis `yarn build` -> TS compiliert nach `dist` (CommonJS-Code!)
 
 - Im Verzeichnis `app`:
   - `yarn build` -> TS compiliert nach `dist` (Common-JS code!)
@@ -23,6 +24,11 @@ von ESM-Modulen in TypeScript zu zeigen.
 - Modul, das "nur" ESM-Code enthält (=> p-queue), aber kein CommonJS
 - Wird von `app` und `app-esm` verwendet
 
+## lib-cjs
+
+- Modul, das CommonJS verwendet und auch "nur" CommonJS Code exportiert
+- Wird von `app-esm` verwendet
+
 ## app
 
 - TS app, compiliert zu common-js, kann deshaöb lib nicht verwenden :-(
@@ -30,6 +36,8 @@ von ESM-Modulen in TypeScript zu zeigen.
 ## app-esm
 
 - TS app, compiliert nach ESM (imports bleiben erhalten)
+- Verwendet `lib`, das "nur" ESM Code exportiert
+- Verwendet auch lib-cjs, das "nur" "CommonJS" code exportiert
 
 - Änderungen:
   - package.json: `type: module`, damit NodeJS die import-Statements zur Laufzeit verarbeitet (oder alle Dateien in .mjs ändern)
